@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from 'react';
 import Navbar from './components/navbar/Navbar';
 import Blogs from './components/Blogs/Blogs';
+import Bookmarked from './components/Bookmarked/Bookmarked';
 
 const App = () => {
   const [bookmarked, setBookmarked] = useState([]);
@@ -23,9 +24,11 @@ const App = () => {
             <h1 className='text-2xl font-semibold my-3'>Reading Time: 0</h1>
             <h1 className='text-2xl font-semibold my-3'>Bookmarked Count : {bookmarked.length}</h1>
           </div>
-          <div>
+          <div className='space-y-2'>
             {/* Here are Show all The Book bookmarked */}
-
+            {
+              bookmarked.map(e => <Bookmarked card={e} key={e.id}></Bookmarked>)
+            }
           </div>
         </div>
       </div>

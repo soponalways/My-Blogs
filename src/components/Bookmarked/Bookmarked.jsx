@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Bookmarked = () => {
+const Bookmarked = ({card}) => {
     return (
-        <div>
-            Hello from book marked
+        <div className="card w-96 bg-base-100 card-md shadow-sm mx-auto">
+            <div className="card-body">
+                <h2 className="card-title">{card.title}</h2>
+            </div>
         </div>
     );
 };
